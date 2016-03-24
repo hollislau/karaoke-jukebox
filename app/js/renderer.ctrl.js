@@ -1,5 +1,6 @@
 require("../app.js");
 require("./url.filter.js");
+var queue = require("./queuedemo.js");
 
 (function () {
 
@@ -12,8 +13,8 @@ require("./url.filter.js");
     var mp3Path = "http://localhost:5678/"
 
     function initialize() {
-      user = socket.queue[0].user;
-      song = socket.queue[0].song;
+      user = queue.user;
+      song = queue.song;
       vm.songSrc = mp3Path + song.mp3file;
       userMessage(",", " you're up!");
       beatDuration = song.lyrics[0].beatDuration;
